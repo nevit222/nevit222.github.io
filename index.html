@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ans Bee App - Mobile App Developer</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header-title {
+            display: flex;
+            align-items: center;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .header-title .material-icons-round {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            color: #007bff;
+        }
+        h1 { font-size: 2.2rem; margin: 0; }
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            margin-top: 0;
+            font-weight: normal;
+            font-size: 1.1rem;
+            margin-left: 55px;
+        }
+        .app-card {
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            transition: transform 0.2s;
+        }
+        .app-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .app-item-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .app-icon-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            margin-right: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            object-fit: cover;
+            background-color: #ddd;
+        }
+        .app-info h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.2;
+        }
+        .app-info p {
+            margin: 0 0 15px 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .features-list li {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .features-list .material-icons-round {
+            font-size: 1.2rem;
+            color: #27ae60;
+            margin-right: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .contact-section {
+            margin-top: 40px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .contact-section .material-icons-round {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+        .contact-info h3 { font-size: 1.1rem; margin: 0 0 5px 0; }
+        .contact-info p { font-size: 0.9rem; margin: 0; }
+        .footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        a { color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-title">
+            <span class="material-icons-round">business_center</span>
+            <h1>Ans Bee App</h1>
+        </div>
+        <p class="subtitle">Mobile Application Developer | Manado, Indonesia</p>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+        <h2 style="font-size: 1.1rem; color: #444; margin-bottom: 20px;">Featured App</h2>
+        
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-item-header">
+                    <img src="app_icon.png" alt="Nectar Wallet Icon" class="app-icon-img">
+                    <h3>Nectar Wallet: Money Tracker</h3>
+                </div>
+
+                <p>
+                    Aplikasi pencatat keuangan yang memudahkan kamu mengatur pengeluaran dan membuat budgeting jadi lebih rapi.
+                </p>
+                
+                <ul class="features-list">
+                    <li><span class="material-icons-round">check_circle</span>Pencatatan Pengeluaran & Pemasukan Cepat</li>
+                    <li><span class="material-icons-round">check_circle</span>Manajemen Multi-Akun & Budgeting</li>
+                    <li><span class="material-icons-round">check_circle</span>Laporan Visual & Ekspor PDF/CSV</li>
+                    <li><span class="material-icons-round">check_circle</span>Backup & Restore Data</li>
+                </ul>
+
+                <a href="https://play.google.com/store/apps/details?id=com.ansbeeapp.ansdompet.ans_dompet" target="_blank" class="btn">
+                    Download di Play Store &rarr;
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <span class="material-icons-round">email</span>
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Untuk pertanyaan bisnis, dukungan aplikasi, atau feedback, silakan email ke:</p>
+                <p><strong>ansbee01@gmail.com</strong></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Ans Bee App. All rights reserved.</p>
+            <p><a href="https://www.termsfeed.com/live/b68ec1aa-9629-4eeb-bcae-f933667da9b5" target="_blank">Privacy Policy</a></p> 
+        </div>
+    </div>
+
+</body>
+</html>
