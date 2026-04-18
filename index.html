@@ -3,187 +3,512 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ans Bee App - Mobile App Developer</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <title>Ans Bee App — Mobile App Developer</title>
+    <meta name="description" content="Ans Bee App is a mobile application development studio based in Manado, Indonesia. Creator of Nectar Wallet.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg:        #09090B;
+            --bg-2:      #111113;
+            --bg-3:      #18181B;
+            --border:    rgba(255,255,255,0.07);
+            --border-2:  rgba(255,255,255,0.12);
+            --amber:     #F59E0B;
+            --amber-dim: rgba(245,158,11,0.12);
+            --amber-border: rgba(245,158,11,0.25);
+            --text-1:    #FAFAFA;
+            --text-2:    #A1A1AA;
+            --text-3:    #52525B;
+            --white:     #FFFFFF;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text-1);
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .header-title {
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
             display: flex;
             align-items: center;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        .header-title .material-icons-round {
-            font-size: 2.5rem;
-            margin-right: 15px;
-            color: #007bff;
-        }
-        h1 { font-size: 2.2rem; margin: 0; }
-        .subtitle {
-            color: #7f8c8d;
-            margin-bottom: 30px;
-            margin-top: 0;
-            font-weight: normal;
-            font-size: 1.1rem;
-            margin-left: 55px;
-        }
-        .app-card {
-            border: 1px solid #eee;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            background-color: #fff;
-            transition: transform 0.2s;
-        }
-        .app-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .app-item-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .app-icon-img {
-            width: 64px;
+            justify-content: space-between;
+            padding: 0 48px;
             height: 64px;
-            border-radius: 14px;
-            margin-right: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            object-fit: cover;
-            background-color: #ddd;
+            background: rgba(9,9,11,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
         }
-        .app-info h3 {
-            margin: 0;
-            font-size: 1.3rem;
-            color: #2c3e50;
-            line-height: 1.2;
-        }
-        .app-info p {
-            margin: 0 0 15px 0;
-            font-size: 0.95rem;
-            color: #555;
-        }
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 20px;
-        }
-        .features-list li {
+        .wordmark {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: -0.03em;
+            color: var(--text-1);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 8px;
+            gap: 7px;
         }
-        .features-list .material-icons-round {
-            font-size: 1.2rem;
-            color: #27ae60;
-            margin-right: 10px;
-        }
-        .btn {
+        .wm-dot {
+            width: 7px; height: 7px;
+            background: var(--amber);
+            border-radius: 50%;
             display: inline-block;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
+            flex-shrink: 0;
         }
-        .btn:hover {
-            background-color: #0056b3;
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-2); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-1); }
+        .nav-cta {
+            font-size: 0.82rem; font-weight: 700;
+            background: var(--amber); color: #000;
+            text-decoration: none; padding: 8px 18px;
+            border-radius: 8px; transition: opacity 0.2s;
         }
-        .contact-section {
-            margin-top: 40px;
+        .nav-cta:hover { opacity: 0.85; }
+
+        /* ─── HERO ─── */
+        .hero-wrap {
+            position: relative;
+            min-height: 100vh;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            overflow: hidden;
         }
-        .contact-section .material-icons-round {
-            font-size: 1.5rem;
-            color: #007bff;
-            margin-right: 15px;
-            margin-top: 2px;
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(130px);
+            pointer-events: none;
         }
-        .contact-info h3 { font-size: 1.1rem; margin: 0 0 5px 0; }
-        .contact-info p { font-size: 0.9rem; margin: 0; }
-        .footer {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            color: #999;
-            text-align: center;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
+        .blob-1 { width: 550px; height: 550px; background: #78350F; opacity: 0.3; top: -80px; right: -60px; }
+        .blob-2 { width: 380px; height: 380px; background: #064E3B; opacity: 0.25; bottom: -40px; left: -60px; }
+
+        .hero {
+            position: relative; z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 120px 48px 80px;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
         }
-        a { color: #007bff; text-decoration: none; }
+        .hero-tag {
+            display: inline-flex; align-items: center; gap: 8px;
+            border: 1px solid var(--amber-border);
+            background: var(--amber-dim);
+            color: var(--amber);
+            font-size: 0.7rem; font-weight: 700;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 5px 14px; border-radius: 100px;
+            margin-bottom: 24px;
+        }
+        .hero-tag .pulse {
+            width: 5px; height: 5px;
+            background: var(--amber); border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.6)} }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(3rem, 5.5vw, 4.6rem);
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.025em;
+            color: var(--text-1);
+            margin-bottom: 20px;
+        }
+        .hero h1 em { font-style: italic; font-weight: 300; color: var(--amber); }
+        .hero-desc { font-size: 1rem; color: var(--text-2); max-width: 440px; margin-bottom: 8px; line-height: 1.8; }
+        .hero-desc-en { font-size: 0.85rem; color: var(--text-3); font-style: italic; max-width: 440px; margin-bottom: 36px; line-height: 1.7; }
+        .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--amber); color: #000;
+            text-decoration: none; padding: 12px 24px;
+            border-radius: 8px; font-size: 0.875rem; font-weight: 700;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: transparent; color: var(--text-2);
+            text-decoration: none; padding: 12px 24px;
+            border-radius: 8px; font-size: 0.875rem; font-weight: 500;
+            border: 1px solid var(--border-2);
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .btn-ghost:hover { border-color: var(--text-2); color: var(--text-1); }
+
+        /* hero visual */
+        .hero-visual {
+            display: flex; justify-content: center; align-items: center;
+            position: relative; height: 440px;
+        }
+        .app-icon-wrap { position: relative; z-index: 2; animation: float 5s ease-in-out infinite; }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+        .app-icon-wrap img {
+            width: 160px; height: 160px;
+            border-radius: 36px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+        }
+        .icon-ring {
+            position: absolute; inset: -18px;
+            border-radius: 52px;
+            border: 1px solid rgba(245,158,11,0.2);
+            animation: ring-p 3s ease-in-out infinite;
+        }
+        @keyframes ring-p { 0%,100%{opacity:0.3;transform:scale(1)} 50%{opacity:0.8;transform:scale(1.03)} }
+
+        .stat-chip {
+            position: absolute;
+            background: rgba(24,24,27,0.9);
+            border: 1px solid var(--border-2);
+            border-radius: 10px;
+            padding: 10px 16px;
+            display: flex; align-items: center; gap: 10px;
+            z-index: 3; backdrop-filter: blur(12px);
+        }
+        .stat-chip .ci { font-size: 1rem; }
+        .stat-chip .cl { font-size: 0.78rem; font-weight: 600; color: var(--text-1); white-space: nowrap; }
+        .stat-chip .cs { font-size: 0.68rem; color: var(--text-3); }
+        .chip-1 { top: 28px; right: 0; animation: float 5s ease-in-out infinite 0.8s; }
+        .chip-2 { bottom: 55px; left: -10px; animation: float 5s ease-in-out infinite 1.6s; }
+        .chip-3 { bottom: 145px; right: -10px; animation: float 5s ease-in-out infinite 0.4s; }
+
+        /* ─── COMMONS ─── */
+        section { padding: 100px 48px; position: relative; z-index: 1; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+        .s-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 600; color: var(--text-1);
+            margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.02em;
+        }
+        .s-sub { font-size: 0.92rem; color: var(--text-2); max-width: 520px; line-height: 1.8; }
+        .s-sub em { color: var(--text-3); font-style: italic; font-size: 0.85rem; }
+
+        /* ─── APP ─── */
+        #app { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 56px; }
+        .app-header { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; }
+        .app-header img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+        .app-header h3 { font-size: 1.3rem; font-weight: 700; color: var(--text-1); letter-spacing: -0.02em; }
+        .app-header span { font-size: 0.78rem; color: var(--text-3); font-weight: 500; }
+        .app-desc { color: var(--text-2); font-size: 0.9rem; line-height: 1.78; margin-bottom: 6px; }
+        .app-desc-en { color: var(--text-3); font-size: 0.82rem; font-style: italic; line-height: 1.7; margin-bottom: 28px; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 32px; }
+        .fi {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 12px 14px;
+            background: var(--bg-3); border: 1px solid var(--border);
+            border-radius: 10px; transition: border-color 0.2s;
+        }
+        .fi:hover { border-color: var(--border-2); }
+        .fi .icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+        .fi .label { font-size: 0.8rem; font-weight: 600; color: var(--text-1); line-height: 1.4; }
+        .fi .label small { display: block; color: var(--text-3); font-weight: 400; font-size: 0.72rem; margin-top: 2px; }
+        .play-btn {
+            display: inline-flex; align-items: center; gap: 14px;
+            background: var(--bg-3); border: 1px solid var(--border-2);
+            color: var(--text-1); text-decoration: none;
+            padding: 14px 22px; border-radius: 12px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .play-btn:hover { border-color: var(--amber); background: rgba(245,158,11,0.06); }
+        .play-btn .pbi { font-size: 1.8rem; }
+        .play-btn small { display: block; font-size: 0.68rem; color: var(--text-3); font-weight: 400; }
+        .play-btn strong { display: block; font-size: 0.95rem; font-weight: 700; }
+
+        .showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .sc {
+            background: var(--bg-3); border: 1px solid var(--border);
+            border-radius: 14px; padding: 20px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .sc:hover { border-color: var(--border-2); transform: translateY(-2px); }
+        .sc:first-child {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.02) 100%);
+            border-color: var(--amber-border);
+        }
+        .sc .sci { font-size: 1.5rem; margin-bottom: 10px; }
+        .sc h4 { font-size: 0.84rem; font-weight: 700; color: var(--text-1); margin-bottom: 6px; }
+        .sc:first-child h4 { color: var(--amber); font-size: 0.88rem; }
+        .sc p { font-size: 0.78rem; color: var(--text-2); line-height: 1.55; }
+
+        /* ─── ABOUT ─── */
+        #about { background: var(--bg); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 56px; }
+        .about-text p { color: var(--text-2); font-size: 0.9rem; line-height: 1.8; margin-bottom: 12px; }
+        .about-text p.en { color: var(--text-3); font-style: italic; font-size: 0.82rem; margin-top: -6px; }
+        .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .vc {
+            background: var(--bg-3); border: 1px solid var(--border);
+            border-radius: 14px; padding: 20px;
+            transition: border-color 0.2s;
+        }
+        .vc:hover { border-color: var(--border-2); }
+        .vc .vci { font-size: 1.4rem; margin-bottom: 10px; }
+        .vc h4 { font-size: 0.82rem; font-weight: 700; color: var(--text-1); margin-bottom: 6px; }
+        .vc p { font-size: 0.76rem; color: var(--text-3); line-height: 1.55; }
+
+        /* ─── SUPPORT ─── */
+        #support { background: var(--bg-2); border-top: 1px solid var(--border); }
+        .faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 6px; max-width: 720px; }
+        .faq-item {
+            background: var(--bg-3); border: 1px solid var(--border);
+            border-radius: 12px; overflow: hidden; transition: border-color 0.2s;
+        }
+        .faq-item.open { border-color: var(--border-2); }
+        .faq-q {
+            width: 100%; background: none; border: none; text-align: left;
+            padding: 18px 20px;
+            font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 600;
+            color: var(--text-1); cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center; gap: 16px;
+        }
+        .faq-arrow { color: var(--text-3); font-size: 0.9rem; transition: transform 0.25s, color 0.2s; flex-shrink: 0; }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); color: var(--amber); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 20px; }
+        .faq-item.open .faq-a { max-height: 240px; padding: 0 20px 18px; }
+        .faq-a p { font-size: 0.85rem; color: var(--text-2); line-height: 1.75; }
+        .faq-a p.en { font-style: italic; color: var(--text-3); font-size: 0.8rem; margin-top: 6px; }
+
+        .contact-card {
+            margin-top: 48px;
+            background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.02));
+            border: 1px solid var(--amber-border);
+            border-radius: 20px; padding: 40px 48px;
+            display: flex; align-items: center; justify-content: space-between; gap: 32px;
+            max-width: 720px;
+        }
+        .contact-card h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--text-1); margin-bottom: 6px; }
+        .contact-card p { font-size: 0.875rem; color: var(--text-2); }
+        .contact-card a {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--amber); color: #000;
+            text-decoration: none; padding: 12px 22px; border-radius: 10px;
+            font-weight: 700; font-size: 0.85rem; white-space: nowrap; flex-shrink: 0;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+        .contact-card a:hover { opacity: 0.85; transform: translateY(-1px); }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding: 36px 48px; text-align: center;
+        }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+        .footer-wm {
+            font-family: 'Outfit', sans-serif; font-weight: 800;
+            font-size: 1rem; letter-spacing: -0.03em; color: var(--text-2);
+            margin-bottom: 16px;
+            display: flex; align-items: center; justify-content: center; gap: 7px;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 24px; list-style: none; margin-bottom: 14px; }
+        .footer-links a { font-size: 0.78rem; color: var(--text-3); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text-1); }
+        .footer-copy { font-size: 0.74rem; color: var(--text-3); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            nav { padding: 0 20px; }
+            .nav-links, .nav-cta { display: none; }
+            .hero { grid-template-columns: 1fr; padding: 100px 20px 60px; gap: 40px; text-align: center; }
+            .hero-desc, .hero-desc-en { max-width: 100%; }
+            .hero-cta { justify-content: center; }
+            .hero-visual { order: -1; height: 320px; }
+            section { padding: 72px 20px; }
+            .app-grid, .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contact-card { flex-direction: column; text-align: center; padding: 28px 20px; }
+            footer { padding: 28px 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="header-title">
-            <span class="material-icons-round">business_center</span>
-            <h1>Ans Bee App</h1>
-        </div>
-        <p class="subtitle">Mobile Application Developer | Manado, Indonesia</p>
+<nav>
+    <a href="#" class="wordmark"><span class="wm-dot"></span>Ans Bee App</a>
+    <ul class="nav-links">
+        <li><a href="#app">App</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#support">Support</a></li>
+    </ul>
+    <a href="https://play.google.com/store/apps/details?id=com.ansbeeapp.ansdompet.ans_dompet" target="_blank" class="nav-cta">Download →</a>
+</nav>
 
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
-
-        <h2 style="font-size: 1.1rem; color: #444; margin-bottom: 20px;">Featured App</h2>
-        
-        <div class="app-card">
-            <div class="app-info">
-                <div class="app-item-header">
-                    <img src="app_icon.png" alt="Nectar Wallet Icon" class="app-icon-img">
-                    <h3>Nectar Wallet: Money Tracker</h3>
-                </div>
-
-                <p>
-                    Aplikasi pencatat keuangan yang memudahkan kamu mengatur pengeluaran dan membuat budgeting jadi lebih rapi.
-                </p>
-                
-                <ul class="features-list">
-                    <li><span class="material-icons-round">check_circle</span>Pencatatan Pengeluaran & Pemasukan Cepat</li>
-                    <li><span class="material-icons-round">check_circle</span>Manajemen Multi-Akun & Budgeting</li>
-                    <li><span class="material-icons-round">check_circle</span>Laporan Visual & Ekspor PDF/CSV</li>
-                    <li><span class="material-icons-round">check_circle</span>Backup & Restore Data</li>
-                </ul>
-
-                <a href="https://play.google.com/store/apps/details?id=com.ansbeeapp.ansdompet.ans_dompet" target="_blank" class="btn">
-                    Download di Play Store &rarr;
-                </a>
+<div class="hero-wrap">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="hero">
+        <div>
+            <div class="hero-tag"><span class="pulse"></span>Manado, Indonesia</div>
+            <h1>Built for<br><em>everyday use.</em></h1>
+            <p class="hero-desc">Kami membuat aplikasi mobile yang simpel, enak dipakai, dan benar-benar berguna untuk kebutuhan sehari-hari.</p>
+            <p class="hero-desc-en">Building mobile apps that are simple, functional, and genuinely useful for everyday people.</p>
+            <div class="hero-cta">
+                <a href="#app" class="btn-primary">Lihat Aplikasi →</a>
+                <a href="#support" class="btn-ghost">Hubungi Kami</a>
             </div>
         </div>
-
-        <div class="contact-section">
-            <span class="material-icons-round">email</span>
-            <div class="contact-info">
-                <h3>Contact Us</h3>
-                <p>Untuk pertanyaan bisnis, dukungan aplikasi, atau feedback, silakan email ke:</p>
-                <p><strong>ansbee01@gmail.com</strong></p>
+        <div class="hero-visual">
+            <div class="app-icon-wrap">
+                <img src="app_icon.png" alt="Nectar Wallet">
+                <div class="icon-ring"></div>
             </div>
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2026 Ans Bee App. All rights reserved.</p>
-            <p><a href="privacy-policy.html" target="_blank">Privacy Policy</a></p> 
+            <div class="stat-chip chip-1"><span class="ci">📊</span><div><div class="cl">Laporan Visual</div><div class="cs">PDF & CSV export</div></div></div>
+            <div class="stat-chip chip-2"><span class="ci">🔒</span><div><div class="cl">Data Lokal & Aman</div><div class="cs">Enkripsi AES</div></div></div>
+            <div class="stat-chip chip-3"><span class="ci">🌐</span><div><div class="cl">ID · EN</div><div class="cs">Bilingual</div></div></div>
         </div>
     </div>
+</div>
 
+<section id="app">
+    <div class="section-inner">
+        <p class="eyebrow">Featured App</p>
+        <h2 class="s-title">Nectar Wallet</h2>
+        <p class="s-sub">Pencatat keuangan pribadi yang lengkap — cepat, privat, dan bekerja sepenuhnya offline.<br><em>A complete personal finance tracker — fast, private, and fully offline.</em></p>
+        <div class="app-grid">
+            <div>
+                <div class="app-header">
+                    <img src="app_icon.png" alt="Nectar Wallet">
+                    <div><h3>Nectar Wallet</h3><span>Money Tracker · Android</span></div>
+                </div>
+                <p class="app-desc">Catat pemasukan, pengeluaran, transfer antar akun, sampai budget dan tabungan — semuanya dalam satu aplikasi yang simpel dan rapi.</p>
+                <p class="app-desc-en">Track income, expenses, transfers, budgets, savings goals, and debts — all in one clean app.</p>
+                <div class="feature-grid">
+                    <div class="fi"><span class="icon">💸</span><div class="label">Transaksi Cepat<small>Pemasukan, pengeluaran & transfer</small></div></div>
+                    <div class="fi"><span class="icon">📅</span><div class="label">Budget Bulanan<small>Per kategori + import bulan lalu</small></div></div>
+                    <div class="fi"><span class="icon">🎯</span><div class="label">Target Tabungan<small>Progress & kalkulasi otomatis</small></div></div>
+                    <div class="fi"><span class="icon">🤝</span><div class="label">Utang-Piutang<small>Catat cicilan & jatuh tempo</small></div></div>
+                    <div class="fi"><span class="icon">📈</span><div class="label">Laporan & Grafik<small>Ekspor PDF & CSV</small></div></div>
+                    <div class="fi"><span class="icon">🔐</span><div class="label">Backup Terenkripsi<small>File .nectarbackup</small></div></div>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.ansbeeapp.ansdompet.ans_dompet" target="_blank" class="play-btn">
+                    <span class="pbi">▶</span><div><small>Download on</small><strong>Google Play</strong></div>
+                </a>
+            </div>
+            <div class="showcase">
+                <div class="sc"><div class="sci">🗄️</div><h4>100% Local & Private</h4><p>Semua data disimpan langsung di perangkat kamu — tidak dikirim ke server mana pun. <em>Your financial data stays on your device only.</em></p></div>
+                <div class="sc"><div class="sci">🌓</div><h4>Dark & Light Mode</h4><p>Tampilan nyaman di segala kondisi pencahayaan.</p></div>
+                <div class="sc"><div class="sci">🌐</div><h4>Bilingual</h4><p>Bahasa Indonesia & English tersedia.</p></div>
+                <div class="sc"><div class="sci">💎</div><h4>Fitur Premium</h4><p>Backup enkripsi, foto struk & laporan lanjutan.</p></div>
+                <div class="sc"><div class="sci">📸</div><h4>Foto Bukti</h4><p>Lampirkan foto struk ke setiap transaksi.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="section-inner">
+        <p class="eyebrow">About Us</p>
+        <h2 class="s-title">Tentang Ans Bee App</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Ans Bee App adalah studio kecil yang fokus bikin aplikasi mobile yang simpel dan berguna. Kami berbasis di Manado dan lebih memilih membuat produk yang benar-benar dipakai, bukan sekadar terlihat keren.</p>
+                <p class="en">Ans Bee App is a mobile application development studio based in Manado, North Sulawesi, Indonesia — focused on building simple, functional apps that deliver real value to everyday users.</p>
+                <p>Kami memperhatikan hal-hal kecil — mulai dari tampilan, performa, sampai privasi pengguna. Tujuannya sederhana: aplikasi terasa ringan dan nyaman dipakai setiap hari.</p>
+                <p class="en">Every app we release is built with careful attention to detail, user privacy, and a smooth experience — from interface design to technical performance.</p>
+                <p>Ke depan, kami akan terus merilis aplikasi yang fokus ke kebutuhan sehari-hari — ringan, cepat, dan benar-benar kepakai.</p>
+                <p class="en">Going forward, Ans Bee App plans to release more apps focused on everyday utility — lightweight, reliable, and genuinely useful.</p>
+            </div>
+            <div class="value-grid">
+                <div class="vc"><div class="vci">🔒</div><h4>Privacy First</h4><p>Data pengguna tidak pernah meninggalkan perangkat tanpa izin eksplisit.</p></div>
+                <div class="vc"><div class="vci">⚡</div><h4>Lightweight</h4><p>Aplikasi ringan, cepat, dan tidak memakan banyak resource perangkat.</p></div>
+                <div class="vc"><div class="vci">🛠️</div><h4>Maintained</h4><p>Setiap bug dan feedback ditangani dengan cepat dan serius.</p></div>
+                <div class="vc"><div class="vci">🌱</div><h4>Growing</h4><p>Lebih banyak aplikasi dalam pipeline ke depan.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="support">
+    <div class="section-inner">
+        <p class="eyebrow">Support & FAQ</p>
+        <h2 class="s-title">Ada pertanyaan?</h2>
+        <p class="s-sub">Pertanyaan yang sering ditanyakan. Tidak menemukan jawaban? Hubungi kami langsung.<br><em>Frequently asked questions. Can't find your answer? Contact us directly.</em></p>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">Apakah data saya aman? Di mana data disimpan?<span class="faq-arrow">▾</span></button>
+                <div class="faq-a">
+                    <p>Semua data keuangan Anda disimpan sepenuhnya di perangkat Anda sendiri menggunakan database lokal terenkripsi. Kami tidak memiliki server yang menyimpan data pribadi Anda — tidak ada akun, tidak ada sinkronisasi cloud (kecuali backup yang Anda lakukan sendiri).</p>
+                    <p class="en">All your financial data is stored locally on your device using an encrypted local database. We have no server storing your personal data — no accounts, no cloud sync (unless you manually back up).</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">Bagaimana cara backup dan restore data?<span class="faq-arrow">▾</span></button>
+                <div class="faq-a">
+                    <p>Fitur backup tersedia untuk pengguna Premium. Ekspor data ke file <strong>.nectarbackup</strong> terenkripsi AES dengan password pilihan Anda, simpan di lokasi mana saja, dan restore kapan saja dari dalam aplikasi.</p>
+                    <p class="en">Backup is available for Premium users. Export your data to an AES-encrypted .nectarbackup file, save it anywhere, and restore it anytime from within the app.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">Apa saja fitur gratis vs Premium?<span class="faq-arrow">▾</span></button>
+                <div class="faq-a">
+                    <p>Fitur dasar seperti transaksi, budget, laporan, tabungan, dan utang-piutang tersedia gratis. Premium mencakup: backup & restore terenkripsi, foto bukti transaksi, ikon kustom, dan ekspor PDF penuh tanpa iklan.</p>
+                    <p class="en">Core features (transactions, budget, reports, savings, debts) are free. Premium unlocks: encrypted backup/restore, receipt photos, custom icons, and full PDF export without ads.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">Apakah aplikasi bisa dipakai offline?<span class="faq-arrow">▾</span></button>
+                <div class="faq-a">
+                    <p>Ya. Nectar Wallet dirancang untuk bekerja sepenuhnya offline karena semua data tersimpan lokal. Internet hanya dibutuhkan untuk iklan (pengguna gratis) dan validasi status Premium.</p>
+                    <p class="en">Yes. Nectar Wallet is fully offline-capable. Internet is only needed for ads (free users) and Premium status validation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">Bagaimana cara melaporkan bug atau memberikan saran?<span class="faq-arrow">▾</span></button>
+                <div class="faq-a">
+                    <p>Kirim email ke <strong>ansbee01@gmail.com</strong> dengan deskripsi masalah atau saran Anda. Setiap feedback kami baca dan pertimbangkan dengan serius.</p>
+                    <p class="en">Email us at ansbee01@gmail.com with your bug report or suggestion. Every piece of feedback is read and taken seriously.</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-card">
+            <div>
+                <h3>Butuh bantuan?</h3>
+                <p>Ada pertanyaan, bug, atau saran? Langsung hubungi kami.<br><em style="font-size:0.8rem;color:var(--text-3);">Contact us for questions, bug reports, or feedback.</em></p>
+            </div>
+            <a href="mailto:ansbee01@gmail.com">✉ ansbee01@gmail.com</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-wm"><span class="wm-dot"></span>Ans Bee App</div>
+        <ul class="footer-links">
+            <li><a href="#app">App</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+        <p class="footer-copy">© 2026 Ans Bee App. All rights reserved. · Manado, Indonesia</p>
+    </div>
+</footer>
+
+<script>
+    function toggleFaq(btn) {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    }
+</script>
 </body>
 </html>
