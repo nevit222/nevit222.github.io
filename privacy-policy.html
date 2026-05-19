@@ -71,6 +71,34 @@ a {
     color:var(--accent);
     text-decoration:none;
 }
+
+.lang-switcher {
+    display:flex;
+    gap:8px;
+    margin-bottom:28px;
+}
+
+.lang-switcher button {
+    background:transparent;
+    border:1px solid var(--border);
+    color:var(--muted);
+    font-family:'Outfit',sans-serif;
+    font-size:0.8rem;
+    font-weight:500;
+    padding:4px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:all 0.15s;
+}
+
+.lang-switcher button.active {
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#09090B;
+}
+
+[data-lang] { display:none; }
+[data-lang].visible { display:block; }
 </style>
 </head>
 
@@ -79,7 +107,15 @@ a {
 <div class="container">
 <div class="card">
 
-<h1>Privacy Policy</h1>
+<div class="lang-switcher">
+    <button id="btn-id" class="active" onclick="setLang('id')">ID</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<!-- ===== BAHASA INDONESIA ===== -->
+<div data-lang="id" class="visible">
+
+<h1>Kebijakan Privasi</h1>
 <p class="update-date">Terakhir diperbarui: 14 Januari 2026</p>
 
 <p>Halaman ini menjelaskan bagaimana kami mengelola dan melindungi data Anda saat menggunakan <strong>Nectar Wallet</strong>.</p>
@@ -104,7 +140,7 @@ a {
 </div>
 
 <div class="service-provider">
-<strong>RevenueCat & Google Play Billing</strong>
+<strong>RevenueCat &amp; Google Play Billing</strong>
 <p>Digunakan untuk mengelola pembelian Premium. <a href="https://www.revenuecat.com/privacy" target="_blank">Lihat kebijakan</a></p>
 </div>
 
@@ -121,7 +157,72 @@ a {
 <p>Jika ada pertanyaan, hubungi kami di: <strong>ansbee01@gmail.com</strong></p>
 
 </div>
+
+<!-- ===== ENGLISH ===== -->
+<div data-lang="en">
+
+<h1>Privacy Policy</h1>
+<p class="update-date">Last updated: January 14, 2026</p>
+
+<p>This page explains how we manage and protect your data when you use <strong>Nectar Wallet</strong>.</p>
+
+<p>Nectar Wallet is a personal finance tracker designed to work entirely on-device (offline-first), so your data stays on your device.</p>
+
+<h2>1. Data Collection</h2>
+<p>We do not require you to create an account (name, email, or phone number) to use this app.</p>
+
+<h2>2. Types of Data</h2>
+<ul>
+<li><strong>Transaction Data:</strong> Stored entirely on your device and never sent to our servers.</li>
+<li><strong>Device Information:</strong> Used for advertising and technical analytics (e.g. Advertising ID).</li>
+<li><strong>Purchases:</strong> Processed by third-party services to validate Premium access.</li>
+</ul>
+
+<h2>3. Third-Party Services</h2>
+
+<div class="service-provider">
+<strong>Google AdMob</strong>
+<p>Used to display advertisements. <a href="https://policies.google.com/privacy" target="_blank">View policy</a></p>
 </div>
+
+<div class="service-provider">
+<strong>RevenueCat &amp; Google Play Billing</strong>
+<p>Used to manage Premium purchases. <a href="https://www.revenuecat.com/privacy" target="_blank">View policy</a></p>
+</div>
+
+<h2>4. Security</h2>
+<p>Your data remains on your device. We recommend enabling a screen lock for additional security.</p>
+
+<h2>5. Children</h2>
+<p>This app is not intended for children under the age of 13.</p>
+
+<h2>6. Changes</h2>
+<p>This policy may be updated from time to time.</p>
+
+<h2>7. Contact</h2>
+<p>If you have any questions, contact us at: <strong>ansbee01@gmail.com</strong></p>
+
+</div>
+
+</div>
+</div>
+
+<script>
+function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(function(el) {
+        el.classList.toggle('visible', el.dataset.lang === lang);
+    });
+    document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+}
+
+// Auto-detect browser language on first load
+(function() {
+    var nav = navigator.language || navigator.userLanguage || '';
+    if (!nav.toLowerCase().startsWith('id')) setLang('en');
+})();
+</script>
 
 </body>
 </html>
