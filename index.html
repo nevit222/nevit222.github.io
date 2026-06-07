@@ -227,6 +227,28 @@
         .sc:first-child h4 { color: var(--blue); font-size: 0.88rem; }
         .sc p { font-size: 0.78rem; color: var(--text-2); line-height: 1.55; }
 
+        /* ─── SCREENSHOTS ─── */
+        #screenshots { background: var(--bg); }
+        .screenshots-track {
+            display: grid; grid-auto-flow: column;
+            grid-auto-columns: minmax(220px, 270px);
+            gap: 18px; margin-top: 48px; padding-bottom: 18px;
+            overflow-x: auto; overscroll-behavior-inline: contain;
+            scroll-snap-type: inline mandatory;
+            scrollbar-color: var(--border-2) transparent;
+        }
+        .screenshot-item { scroll-snap-align: start; }
+        .screenshot-item img {
+            display: block; width: 100%; height: auto;
+            aspect-ratio: 642 / 1389; object-fit: cover;
+            border: 1px solid var(--border-2); border-radius: 8px;
+            background: var(--bg-2);
+        }
+        .screenshot-item figcaption {
+            margin-top: 12px; font-size: 0.82rem;
+            font-weight: 600; color: var(--text-2);
+        }
+
         /* ─── WHY ─── */
         #about { background: var(--bg); }
         .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 48px; }
@@ -305,6 +327,10 @@
             .hero-visual { order: -1; height: 320px; }
             section { padding: 72px 20px; }
             .app-grid { grid-template-columns: 1fr; gap: 40px; }
+            .screenshots-track {
+                grid-auto-columns: minmax(210px, 68vw);
+                margin-right: -20px; padding-right: 20px;
+            }
             .contact-card { flex-direction: column; text-align: center; padding: 28px 20px; }
             footer { padding: 28px 20px; }
         }
@@ -334,6 +360,7 @@
     <a href="#" class="wordmark"><span class="wm-dot"></span>Nectar Wallet</a>
     <ul class="nav-links">
         <li><a href="#app" data-i18n="navApp">Fitur</a></li>
+        <li><a href="#screenshots" data-i18n="navScreenshots">Tampilan</a></li>
         <li><a href="#about" data-i18n="navAbout">Kenapa</a></li>
         <li><a href="#support" data-i18n="navSupport">Bantuan</a></li>
     </ul>
@@ -416,6 +443,40 @@
     </div>
 </section>
 
+<section id="screenshots" aria-labelledby="screenshots-title">
+    <div class="section-inner">
+        <p class="eyebrow" data-i18n="screenshotsEyebrow">Tampilan Aplikasi</p>
+        <h2 class="s-title" id="screenshots-title" data-i18n="screenshotsTitle">Lihat keuanganmu dengan lebih jelas.</h2>
+        <p class="s-sub" data-i18n="screenshotsSubtitle">Dari transaksi harian sampai budget, tabungan, laporan, dan utang-piutang dalam satu aplikasi.</p>
+        <div class="screenshots-track">
+            <figure class="screenshot-item">
+                <img src="assets/screenshots/nectar-wallet-home.webp" alt="Dashboard Nectar Wallet untuk melihat saldo dan riwayat transaksi" data-i18n-alt="screenshotHomeAlt" width="642" height="1389" loading="lazy" decoding="async">
+                <figcaption data-i18n="screenshotHomeCaption">Dashboard &amp; transaksi</figcaption>
+            </figure>
+            <figure class="screenshot-item">
+                <img src="assets/screenshots/nectar-wallet-reports.webp" alt="Laporan pengeluaran Nectar Wallet dalam bentuk grafik kategori" data-i18n-alt="screenshotReportsAlt" width="642" height="1389" loading="lazy" decoding="async">
+                <figcaption data-i18n="screenshotReportsCaption">Laporan visual</figcaption>
+            </figure>
+            <figure class="screenshot-item">
+                <img src="assets/screenshots/nectar-wallet-budget.webp" alt="Budget bulanan Nectar Wallet dengan progres setiap kategori" data-i18n-alt="screenshotBudgetAlt" width="642" height="1389" loading="lazy" decoding="async">
+                <figcaption data-i18n="screenshotBudgetCaption">Budget bulanan</figcaption>
+            </figure>
+            <figure class="screenshot-item">
+                <img src="assets/screenshots/nectar-wallet-savings.webp" alt="Target tabungan Nectar Wallet dengan progres dan target waktu" data-i18n-alt="screenshotSavingsAlt" width="642" height="1389" loading="lazy" decoding="async">
+                <figcaption data-i18n="screenshotSavingsCaption">Target tabungan</figcaption>
+            </figure>
+            <figure class="screenshot-item">
+                <img src="assets/screenshots/nectar-wallet-debts.webp" alt="Pencatatan utang dan piutang di Nectar Wallet" data-i18n-alt="screenshotDebtsAlt" width="642" height="1389" loading="lazy" decoding="async">
+                <figcaption data-i18n="screenshotDebtsCaption">Utang &amp; piutang</figcaption>
+            </figure>
+            <figure class="screenshot-item">
+                <img src="assets/screenshots/nectar-wallet-categories.webp" alt="Pengelolaan kategori dan subkategori keuangan di Nectar Wallet" data-i18n-alt="screenshotCategoriesAlt" width="642" height="1389" loading="lazy" decoding="async">
+                <figcaption data-i18n="screenshotCategoriesCaption">Kategori fleksibel</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
 <section id="about">
     <div class="section-inner">
         <p class="eyebrow" data-i18n="aboutEyebrow">Kenapa Nectar Wallet?</p>
@@ -483,6 +544,7 @@
         <div class="footer-wm"><span class="wm-dot"></span>Nectar Wallet</div>
         <ul class="footer-links">
             <li><a href="#app" data-i18n="navApp">Fitur</a></li>
+            <li><a href="#screenshots" data-i18n="navScreenshots">Tampilan</a></li>
             <li><a href="#about" data-i18n="navAbout">Kenapa</a></li>
             <li><a href="#support" data-i18n="navSupport">Bantuan</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
@@ -497,6 +559,7 @@
             pageTitle: 'Nectar Wallet — Catatan Keuangan Harian',
             pageDescription: 'Nectar Wallet membantu mencatat pemasukan, pengeluaran, budget, tabungan, dan utang-piutang langsung dari HP. Bisa dipakai offline di Android dan iOS.',
             navApp: 'Fitur',
+            navScreenshots: 'Tampilan',
             navAbout: 'Tentang',
             navSupport: 'Bantuan',
             downloadCta: 'Download →',
@@ -529,6 +592,21 @@
             showcasePremiumText: 'Backup terenkripsi, foto struk, ikon kustom, dan laporan lebih lengkap tanpa iklan.',
             showcaseThemeTitle: 'Mode Gelap & Terang',
             showcaseThemeText: 'Pilih tampilan yang nyaman dipakai pagi, siang, atau malam.',
+            screenshotsEyebrow: 'Tampilan Aplikasi',
+            screenshotsTitle: 'Lihat keuanganmu dengan lebih jelas.',
+            screenshotsSubtitle: 'Dari transaksi harian sampai budget, tabungan, laporan, dan utang-piutang dalam satu aplikasi.',
+            screenshotHomeCaption: 'Dashboard & transaksi',
+            screenshotHomeAlt: 'Dashboard Nectar Wallet untuk melihat saldo dan riwayat transaksi',
+            screenshotReportsCaption: 'Laporan visual',
+            screenshotReportsAlt: 'Laporan pengeluaran Nectar Wallet dalam bentuk grafik kategori',
+            screenshotBudgetCaption: 'Budget bulanan',
+            screenshotBudgetAlt: 'Budget bulanan Nectar Wallet dengan progres setiap kategori',
+            screenshotSavingsCaption: 'Target tabungan',
+            screenshotSavingsAlt: 'Target tabungan Nectar Wallet dengan progres dan target waktu',
+            screenshotDebtsCaption: 'Utang & piutang',
+            screenshotDebtsAlt: 'Pencatatan utang dan piutang di Nectar Wallet',
+            screenshotCategoriesCaption: 'Kategori fleksibel',
+            screenshotCategoriesAlt: 'Pengelolaan kategori dan subkategori keuangan di Nectar Wallet',
             aboutEyebrow: 'Kenapa Nectar Wallet?',
             aboutTitle: 'Ringkas, privat, dan enak dipakai.',
             aboutSub: 'Nectar Wallet dibuat untuk kebiasaan sehari-hari: buka, catat, selesai. Tidak perlu login dan tidak bergantung pada internet.',
@@ -561,6 +639,7 @@
             pageTitle: 'Nectar Wallet — Personal Finance Tracker',
             pageDescription: 'Nectar Wallet helps you track income, expenses, budgets, savings, and debts from your phone. It works offline on Android and iOS.',
             navApp: 'Features',
+            navScreenshots: 'Screens',
             navAbout: 'About',
             navSupport: 'Support',
             downloadCta: 'Download →',
@@ -593,6 +672,21 @@
             showcasePremiumText: 'Encrypted backup, receipt photos, custom icons, and fuller reports without ads.',
             showcaseThemeTitle: 'Dark & Light Mode',
             showcaseThemeText: 'Choose the look that feels comfortable morning, afternoon, or night.',
+            screenshotsEyebrow: 'App Screens',
+            screenshotsTitle: 'See your finances more clearly.',
+            screenshotsSubtitle: 'Daily transactions, budgets, savings, reports, and debts in one app.',
+            screenshotHomeCaption: 'Dashboard & transactions',
+            screenshotHomeAlt: 'Nectar Wallet dashboard showing balances and transaction history',
+            screenshotReportsCaption: 'Visual reports',
+            screenshotReportsAlt: 'Nectar Wallet expense report with a category chart',
+            screenshotBudgetCaption: 'Monthly budgets',
+            screenshotBudgetAlt: 'Nectar Wallet monthly budget progress by category',
+            screenshotSavingsCaption: 'Savings goals',
+            screenshotSavingsAlt: 'Nectar Wallet savings goals with progress and time targets',
+            screenshotDebtsCaption: 'Debts & receivables',
+            screenshotDebtsAlt: 'Debt and receivable tracking in Nectar Wallet',
+            screenshotCategoriesCaption: 'Flexible categories',
+            screenshotCategoriesAlt: 'Custom category and subcategory management in Nectar Wallet',
             aboutEyebrow: 'Why Nectar Wallet?',
             aboutTitle: 'Simple, private, and easy to keep using.',
             aboutSub: 'Nectar Wallet is built for daily habits: open, record, done. No login required, and no need to depend on internet.',
@@ -653,6 +747,7 @@
         twitterDescription.setAttribute('content', d.pageDescription);
         document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = d[el.dataset.i18n]; });
         document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = d[el.dataset.i18nHtml]; });
+        document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = d[el.dataset.i18nAlt]; });
         langButtons.forEach(btn => { btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)); });
         saveLanguage(lang);
     }
