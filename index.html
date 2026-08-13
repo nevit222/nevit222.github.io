@@ -465,7 +465,7 @@
                 </div>
             </div>
             <div class="showcase">
-                <div class="sc"><div class="sci">🗄️</div><h4 data-i18n="showcasePrivacyTitle">Data Tetap di HP</h4><p data-i18n="showcasePrivacyText">Tidak perlu bikin akun. Data keuanganmu disimpan lokal di perangkat, bukan di server kami.</p></div>
+                <div class="sc"><div class="sci">🗄️</div><h4 data-i18n="showcasePrivacyTitle">Lokal secara Default</h4><p data-i18n="showcasePrivacyText">Tidak perlu akun untuk fitur utama. Sinkronisasi Cloud hanya aktif jika kamu memilihnya.</p></div>
                 <div class="sc"><div class="sci">💼</div><h4 data-i18n="showcaseAccountsTitle">Multi Akun/Dompet</h4><p data-i18n="showcaseAccountsText">Kelola beberapa dompet atau rekening sekaligus, lengkap dengan transfer antar akun.</p></div>
                 <div class="sc"><div class="sci">📅</div><h4 data-i18n="showcasePeriodTitle">Filter Periode</h4><p data-i18n="showcasePeriodText">Cek catatan harian, mingguan, bulanan, 3 bulan, 6 bulan, atau pilih tanggal sendiri.</p></div>
                 <div class="sc"><div class="sci">💎</div><h4 data-i18n="showcasePremiumTitle">Pilihan Premium</h4><p data-i18n="showcasePremiumText">Backup terenkripsi, foto struk, ikon kustom, dan laporan lebih lengkap tanpa iklan.</p></div>
@@ -513,9 +513,9 @@
     <div class="section-inner">
         <p class="eyebrow" data-i18n="aboutEyebrow">Kenapa Nectar Wallet?</p>
         <h2 class="s-title" data-i18n="aboutTitle">Ringkas, privat, dan enak dipakai.</h2>
-        <p class="s-sub" data-i18n="aboutSub">Nectar Wallet dibuat untuk kebiasaan sehari-hari: buka, catat, selesai. Tidak perlu login dan tidak bergantung pada internet.</p>
+        <p class="s-sub" data-i18n="aboutSub">Nectar Wallet dibuat untuk kebiasaan sehari-hari: buka, catat, selesai. Fitur utama tetap bisa dipakai tanpa login dan internet.</p>
         <div class="value-grid">
-            <div class="vc"><div class="vci">🔒</div><h4 data-i18n="valuePrivacyTitle">Privasi Lebih Tenang</h4><p data-i18n="valuePrivacyText">Data tersimpan di perangkatmu. Tidak ada akun dan tidak ada sinkronisasi otomatis.</p></div>
+            <div class="vc"><div class="vci">🔒</div><h4 data-i18n="valuePrivacyTitle">Privasi Lebih Tenang</h4><p data-i18n="valuePrivacyText">Data disimpan lokal secara default. Cloud terenkripsi hanya aktif setelah kamu memilih dan menyetujuinya.</p></div>
             <div class="vc"><div class="vci">✈️</div><h4 data-i18n="valueOfflineTitle">Bisa Dipakai Offline</h4><p data-i18n="valueOfflineText">Fitur utama tetap jalan tanpa internet. Koneksi hanya dipakai untuk iklan versi gratis dan validasi Premium.</p></div>
             <div class="vc"><div class="vci">💸</div><h4 data-i18n="valueFreeTitle">Fitur Utama Gratis</h4><p data-i18n="valueFreeText">Transaksi, budget, laporan, tabungan, dan utang-piutang bisa dipakai gratis. Premium tersedia untuk kebutuhan tambahan.</p></div>
             <div class="vc"><div class="vci">🛠️</div><h4 data-i18n="valueMaintainedTitle">Terus Dikembangkan</h4><p data-i18n="valueMaintainedText">Bug diperbaiki, masukan pengguna dibaca, dan aplikasi rutin diperbarui.</p></div>
@@ -532,7 +532,7 @@
             <div class="faq-item">
                 <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-data-safety" onclick="toggleFaq(this)"><span data-i18n="faqDataQ">Apakah data saya aman? Di mana data disimpan?</span><span class="faq-arrow" aria-hidden="true">▾</span></button>
                 <div class="faq-a" id="faq-data-safety" hidden>
-                    <p data-i18n="faqDataA">Data keuangan disimpan di perangkatmu dengan database lokal terenkripsi. Kami tidak menyimpan data pribadi di server. Tidak ada akun dan tidak ada sinkronisasi cloud, kecuali backup yang kamu buat sendiri.</p>
+                    <p data-i18n="faqDataA">Data keuangan disimpan lokal secara default. Jika kamu mengaktifkan Sinkronisasi Cloud Premium Plus, data finansial teks dienkripsi di perangkat sebelum dikirim; foto struk dan gambar kustom tetap lokal.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -579,7 +579,9 @@
             <li><a href="#screenshots" data-i18n="navScreenshots">Tampilan</a></li>
             <li><a href="#about" data-i18n="navAbout">Kenapa</a></li>
             <li><a href="#support" data-i18n="navSupport">Bantuan</a></li>
+            <li><a href="cloud-terms.html">Cloud Terms</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="delete-account.html">Delete Account</a></li>
         </ul>
         <p class="footer-copy" data-i18n="footerCopy">© 2026 Nectar Wallet. Made by Ans Bee App Team · Manado, Indonesia</p>
     </div>
@@ -614,8 +616,8 @@
             featureDebts: 'Utang-Piutang<small>Catat cicilan &amp; jatuh tempo</small>',
             featureReports: 'Laporan &amp; Grafik<small>Ringkasan, tren, ekspor PDF &amp; CSV</small>',
             featureAccounts: 'Multi Akun<small>Kelola beberapa dompet sekaligus</small>',
-            showcasePrivacyTitle: 'Data Tetap di HP',
-            showcasePrivacyText: 'Tidak perlu bikin akun. Data keuanganmu disimpan lokal di perangkat, bukan di server kami.',
+            showcasePrivacyTitle: 'Lokal secara Default',
+            showcasePrivacyText: 'Tidak perlu akun untuk fitur utama. Sinkronisasi Cloud hanya aktif jika kamu memilihnya.',
             showcaseAccountsTitle: 'Multi Akun/Dompet',
             showcaseAccountsText: 'Kelola beberapa dompet atau rekening sekaligus, lengkap dengan transfer antar akun.',
             showcasePeriodTitle: 'Filter Periode',
@@ -641,9 +643,9 @@
             screenshotCategoriesAlt: 'Pengelolaan kategori dan subkategori keuangan di Nectar Wallet',
             aboutEyebrow: 'Kenapa Nectar Wallet?',
             aboutTitle: 'Ringkas, privat, dan enak dipakai.',
-            aboutSub: 'Nectar Wallet dibuat untuk kebiasaan sehari-hari: buka, catat, selesai. Tidak perlu login dan tidak bergantung pada internet.',
+            aboutSub: 'Nectar Wallet dibuat untuk kebiasaan sehari-hari: buka, catat, selesai. Fitur utama tetap bisa dipakai tanpa login dan internet.',
             valuePrivacyTitle: 'Privasi Lebih Tenang',
-            valuePrivacyText: 'Data tersimpan di perangkatmu. Tidak ada akun dan tidak ada sinkronisasi otomatis.',
+            valuePrivacyText: 'Data disimpan lokal secara default. Cloud terenkripsi hanya aktif setelah kamu memilih dan menyetujuinya.',
             valueOfflineTitle: 'Bisa Dipakai Offline',
             valueOfflineText: 'Fitur utama tetap jalan tanpa internet. Koneksi hanya dipakai untuk iklan versi gratis dan validasi Premium.',
             valueFreeTitle: 'Fitur Utama Gratis',
@@ -654,7 +656,7 @@
             supportTitle: 'Ada pertanyaan?',
             supportSubtitle: 'Beberapa jawaban cepat soal data, backup, Premium, dan cara menghubungi kami.',
             faqDataQ: 'Apakah data saya aman? Di mana data disimpan?',
-            faqDataA: 'Data keuangan disimpan di perangkatmu dengan database lokal terenkripsi. Kami tidak menyimpan data pribadi di server. Tidak ada akun dan tidak ada sinkronisasi cloud, kecuali backup yang kamu buat sendiri.',
+            faqDataA: 'Data keuangan disimpan lokal secara default. Jika kamu mengaktifkan Sinkronisasi Cloud Premium Plus, data finansial teks dienkripsi di perangkat sebelum dikirim; foto struk dan gambar kustom tetap lokal.',
             faqBackupQ: 'Bagaimana cara backup dan restore data?',
             faqBackupA: 'Backup tersedia untuk pengguna Premium. Kamu bisa mengekspor data ke file <strong>.nectarbackup</strong> terenkripsi AES dengan password pilihanmu, lalu restore lagi dari aplikasi kapan saja.',
             faqPremiumQ: 'Apa saja fitur gratis vs Premium?',
@@ -694,8 +696,8 @@
             featureDebts: 'Debts & Receivables<small>Installments &amp; due dates</small>',
             featureReports: 'Reports & Charts<small>Summaries, trends, PDF &amp; CSV export</small>',
             featureAccounts: 'Multiple Accounts<small>Manage several wallets at once</small>',
-            showcasePrivacyTitle: 'Data Stays on Your Phone',
-            showcasePrivacyText: 'No account required. Your financial data is stored locally on your device, not on our server.',
+            showcasePrivacyTitle: 'Local by Default',
+            showcasePrivacyText: 'Core features need no account. Cloud Sync is enabled only when you choose it.',
             showcaseAccountsTitle: 'Multiple Wallets',
             showcaseAccountsText: 'Manage multiple wallets or bank accounts with transfers between them.',
             showcasePeriodTitle: 'Period Filters',
@@ -721,9 +723,9 @@
             screenshotCategoriesAlt: 'Custom category and subcategory management in Nectar Wallet',
             aboutEyebrow: 'Why Nectar Wallet?',
             aboutTitle: 'Simple, private, and easy to keep using.',
-            aboutSub: 'Nectar Wallet is built for daily habits: open, record, done. No login required, and no need to depend on internet.',
+            aboutSub: 'Nectar Wallet is built for daily habits: open, record, done. Core features continue to work without login or internet.',
             valuePrivacyTitle: 'More Private by Default',
-            valuePrivacyText: 'Your data is stored on your device. No account and no automatic sync.',
+            valuePrivacyText: 'Data is local by default. Encrypted cloud storage starts only after you choose and accept it.',
             valueOfflineTitle: 'Works Offline',
             valueOfflineText: 'Core features keep working without internet. Connection is only used for free-version ads and Premium validation.',
             valueFreeTitle: 'Main Features Are Free',
@@ -734,7 +736,7 @@
             supportTitle: 'Questions?',
             supportSubtitle: 'Quick answers about data, backup, Premium, and how to contact us.',
             faqDataQ: 'Is my data safe? Where is it stored?',
-            faqDataA: 'Your financial data is stored on your device in an encrypted local database. We do not store personal data on our server. There is no account and no cloud sync, except for backups you create yourself.',
+            faqDataA: 'Financial data is local by default. If you enable Premium Plus Cloud Sync, text-based financial content is encrypted on the device before transmission; receipt photos and custom images remain local.',
             faqBackupQ: 'How do backup and restore work?',
             faqBackupA: 'Backup is available for Premium users. You can export data to an AES-encrypted <strong>.nectarbackup</strong> file with your own password, then restore it from the app anytime.',
             faqPremiumQ: 'What is included in Free vs Premium?',

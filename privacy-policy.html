@@ -1,240 +1,198 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy - Nectar Wallet</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-    --bg:#09090B;
-    --card:#111113;
-    --border:rgba(255,255,255,0.08);
-    --text:#FAFAFA;
-    --muted:#A1A1AA;
-    --accent:#F59E0B;
-}
-
-body {
-    margin:0;
-    font-family:'Outfit',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.7;
-}
-
-.container {
-    max-width:760px;
-    margin:auto;
-    padding:60px 20px;
-}
-
-.card {
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:40px;
-}
-
-h1 {
-    font-size:2rem;
-    margin-bottom:10px;
-}
-
-h2 {
-    margin-top:32px;
-    font-size:1.2rem;
-}
-
-p, li {
-    color:var(--muted);
-    font-size:0.95rem;
-}
-
-.update-date {
-    font-size:0.8rem;
-    color:var(--muted);
-    margin-bottom:20px;
-}
-
-.service-provider {
-    background:rgba(255,255,255,0.03);
-    border:1px solid var(--border);
-    padding:16px;
-    border-radius:10px;
-    margin:10px 0;
-}
-
-a {
-    color:var(--accent);
-    text-decoration:none;
-}
-
-.lang-switcher {
-    display:flex;
-    gap:8px;
-    margin-bottom:28px;
-}
-
-.lang-switcher button {
-    background:transparent;
-    border:1px solid var(--border);
-    color:var(--muted);
-    font-family:'Outfit',sans-serif;
-    font-size:0.8rem;
-    font-weight:500;
-    padding:4px 14px;
-    border-radius:6px;
-    cursor:pointer;
-    transition:all 0.15s;
-}
-
-.lang-switcher button.active {
-    background:var(--accent);
-    border-color:var(--accent);
-    color:#09090B;
-}
-
-[data-lang] { display:none; }
-[data-lang].visible { display:block; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebijakan Privasi - Nectar Wallet</title>
+    <meta name="description" content="Cara Nectar Wallet memproses dan melindungi data pengguna pada fitur lokal dan Sinkronisasi Cloud.">
+    <link rel="canonical" href="https://beenectarwallet.com/privacy-policy.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/legal.css">
 </head>
-
 <body>
+<nav class="legal-nav">
+    <a class="wordmark" href="index.html">Nectar Wallet</a>
+    <div class="lang-switcher" aria-label="Language">
+        <button type="button" data-language-button="id" aria-pressed="true" onclick="setLegalLanguage('id')">ID</button>
+        <button type="button" data-language-button="en" aria-pressed="false" onclick="setLegalLanguage('en')">EN</button>
+    </div>
+</nav>
 
-<div class="container">
-<div class="card">
+<main class="legal-shell">
+<article class="legal-card">
+<section data-lang="id" class="visible">
+    <p class="eyebrow">Dokumen versi 2026-08-13</p>
+    <h1>Kebijakan Privasi</h1>
+    <p class="meta">Terakhir diperbarui: 13 Agustus 2026 · Bagian Cloud berlaku saat Sinkronisasi Cloud tersedia untuk publik</p>
 
-<div class="lang-switcher">
-    <button id="btn-id" class="active" onclick="setLang('id')">ID</button>
-    <button id="btn-en" onclick="setLang('en')">EN</button>
-</div>
+    <div class="summary">
+        <p><strong>Ringkasnya:</strong> Nectar Wallet tetap offline-first dan tidak memerlukan akun untuk fitur lokal. Jika Anda memilih Sinkronisasi Cloud Premium Plus, isi finansial teks dienkripsi di perangkat sebelum dikirim. Metadata minimum tetap diproses untuk menyediakan layanan.</p>
+    </div>
 
-<!-- ===== BAHASA INDONESIA ===== -->
-<div data-lang="id" class="visible">
+    <h2>1. Siapa yang mengelola data</h2>
+    <p>Nectar Wallet dikembangkan oleh Ans Bee App Team, Manado, Indonesia. Pertanyaan atau permintaan terkait privasi dapat dikirim ke <a href="mailto:ansbee01@gmail.com">ansbee01@gmail.com</a>.</p>
 
-<h1>Kebijakan Privasi</h1>
-<p class="update-date">Terakhir diperbarui: 22 Juni 2026</p>
+    <h2>2. Fitur lokal tanpa akun</h2>
+    <p>Anda dapat memakai fitur utama tanpa akun cloud. Data keuangan, catatan, foto struk, dan gambar kustom disimpan pada perangkat. Data tersebut hanya keluar dari perangkat jika Anda menjalankan fitur yang memang memerlukannya, seperti berbagi/ekspor, backup pilihan Anda, atau Sinkronisasi Cloud.</p>
 
-<p>Halaman ini menjelaskan bagaimana kami mengelola dan melindungi data Anda saat menggunakan <strong>Nectar Wallet</strong>.</p>
+    <h2>3. Data akun dan Sinkronisasi Cloud</h2>
+    <p>Jika Anda memilih membuat akun cloud, kami memproses:</p>
+    <ul>
+        <li><strong>Identitas akun:</strong> ID pengguna, alamat email, nama tampilan, dan avatar jika diberikan oleh Google atau Apple.</li>
+        <li><strong>Langganan:</strong> status Premium Plus, product ID, masa berlaku, serta waktu verifikasi dari RevenueCat dan toko aplikasi.</li>
+        <li><strong>Persetujuan legal:</strong> jenis, versi, hash dokumen, waktu server, platform, build aplikasi, bahasa, dan flow persetujuan.</li>
+        <li><strong>Perangkat dan keamanan:</strong> ID instalasi, platform, build aplikasi, waktu terakhir aktif, dan status akses perangkat.</li>
+        <li><strong>Metadata sinkronisasi:</strong> ID workspace/record, jenis data, revisi, urutan perubahan, waktu perubahan, status hapus, versi enkripsi, serta ukuran ciphertext.</li>
+        <li><strong>Isi finansial terenkripsi:</strong> data teks akun, kategori, transaksi, transaksi berulang, anggaran, tabungan, serta utang/piutang dalam bentuk ciphertext.</li>
+    </ul>
+    <p>Foto struk, gambar kustom, recovery key, dan kunci workspace mentah tidak diunggah dalam ruang lingkup Sinkronisasi Cloud saat ini.</p>
 
-<p>Nectar Wallet adalah aplikasi pencatat keuangan yang dirancang untuk bekerja secara lokal (offline-first), sehingga data keuangan Anda tetap berada di perangkat Anda. Beberapa fitur opsional, seperti iklan, validasi pembelian, dan pembaruan kurs mata uang, dapat menghubungi layanan pihak ketiga.</p>
+    <h2>4. Cara enkripsi bekerja</h2>
+    <p>Isi finansial dienkripsi di perangkat menggunakan AES-256-GCM sebelum dikirim melalui HTTPS. Server menyimpan ciphertext dan salinan kunci workspace yang sudah dibungkus. Recovery key yang diperlukan untuk membuka pembungkus tidak disimpan oleh Nectar Wallet.</p>
+    <p>Enkripsi end-to-end tidak menyembunyikan metadata minimum yang diperlukan untuk autentikasi, pembatasan Premium Plus, pencegahan konflik, keamanan, dan operasi layanan. Enkripsi juga tidak melindungi perangkat yang sudah terbuka atau disusupi.</p>
 
-<h2>1. Pengumpulan Data</h2>
-<p>Kami tidak meminta Anda membuat akun (nama, email, atau nomor HP) untuk menggunakan aplikasi ini.</p>
+    <h2>5. Data teknis dan fitur pihak ketiga</h2>
+    <ul>
+        <li><strong>Iklan dan analitik teknis:</strong> versi gratis dapat memproses Advertising ID, interaksi aplikasi, dan diagnostik melalui Google AdMob atau layanan platform.</li>
+        <li><strong>Pembelian:</strong> RevenueCat, Google Play Billing, dan App Store memproses data pembelian dan identitas terkait sesuai kebijakan mereka.</li>
+        <li><strong>Kurs mata uang:</strong> ExchangeRate-API/open.er-api.com menerima permintaan berdasarkan kode mata uang dasar, bukan judul, nominal, kategori, akun, catatan, atau foto transaksi.</li>
+        <li><strong>Login:</strong> Google atau Apple memproses autentikasi sesuai pilihan pengguna.</li>
+        <li><strong>Hosting:</strong> backend production direncanakan berjalan sebagai Supabase self-hosted pada VPS Rumahweb di Indonesia. Infrastruktur backup terenkripsi dapat memakai penyedia penyimpanan terpisah yang bertindak atas instruksi kami.</li>
+    </ul>
 
-<h2>2. Jenis Data</h2>
-<ul>
-<li><strong>Data Transaksi:</strong> Disimpan sepenuhnya di perangkat Anda dan tidak dikirim ke server kami.</li>
-<li><strong>Informasi Perangkat:</strong> Digunakan untuk iklan dan analisis teknis (misalnya Advertising ID).</li>
-<li><strong>Pembelian:</strong> Diproses oleh layanan pihak ketiga untuk validasi Premium.</li>
-<li><strong>Permintaan Kurs Mata Uang:</strong> Saat Anda menggunakan fitur multi-mata uang, aplikasi dapat mengambil kurs publik dari penyedia pihak ketiga. Permintaan ini tidak mengirim judul transaksi, nominal transaksi, kategori, akun, catatan, atau foto transaksi Anda.</li>
-</ul>
+    <h2>6. Tujuan pemrosesan</h2>
+    <p>Data digunakan untuk menyediakan fitur aplikasi, autentikasi, memverifikasi langganan, menyinkronkan perangkat, mendeteksi konflik, mencegah penyalahgunaan, menjaga keamanan, menjalankan dukungan, memenuhi permintaan penghapusan, dan memenuhi kewajiban hukum yang berlaku. Data finansial tidak dijual.</p>
 
-<h2>3. Layanan Pihak Ketiga</h2>
+    <h2>7. Pilihan dan kontrol</h2>
+    <ul>
+        <li>Anda dapat menolak Sinkronisasi Cloud dan tetap memakai aplikasi secara lokal.</li>
+        <li>Anda dapat keluar tanpa menghapus akun cloud.</li>
+        <li>Anda dapat menghapus akun cloud dari aplikasi atau melalui halaman <a href="delete-account.html">Penghapusan Akun</a>.</li>
+        <li>Anda dapat meminta informasi atau koreksi data akun melalui alamat kontak kami.</li>
+        <li>Pengaturan iklan dan izin perangkat dapat dikelola melalui sistem operasi atau platform terkait.</li>
+    </ul>
 
-<div class="service-provider">
-<strong>Google AdMob</strong>
-<p>Digunakan untuk menampilkan iklan. <a href="https://policies.google.com/privacy" target="_blank">Lihat kebijakan</a></p>
-</div>
+    <h2>8. Retensi dan penghapusan</h2>
+    <ul>
+        <li>Data lokal bertahan sampai dihapus melalui aplikasi, dihapus dari perangkat, atau aplikasi dihapus sesuai perilaku sistem operasi.</li>
+        <li>Selama akun dan Premium Plus aktif, data cloud disimpan untuk menyediakan sinkronisasi.</li>
+        <li>Setelah Premium Plus berakhir, workspace cloud terenkripsi dapat disimpan hingga 90 hari sebelum dihapus.</li>
+        <li>Jika akun dihapus, data aktif dihapus dari sistem operasional. Salinan residual dalam backup terenkripsi dapat bertahan sampai siklus backup selesai, paling lama 60 hari.</li>
+        <li>Data tertentu dapat dipertahankan lebih lama jika diwajibkan hukum, diperlukan untuk keamanan, atau diperlukan untuk menyelesaikan sengketa; alasan dan ruang lingkupnya akan dibatasi.</li>
+    </ul>
 
-<div class="service-provider">
-<strong>RevenueCat &amp; Google Play Billing</strong>
-<p>Digunakan untuk mengelola pembelian Premium. <a href="https://www.revenuecat.com/privacy" target="_blank">Lihat kebijakan</a></p>
-</div>
+    <h2>9. Keamanan</h2>
+    <p>Kami menggunakan enkripsi perangkat, HTTPS, pembatasan akses server, Row Level Security, pemisahan secret, pencatatan diagnostik yang diminimalkan, dan backup terenkripsi. Tidak ada sistem yang sepenuhnya bebas risiko. Gunakan pengunci layar, lindungi akun Google/Apple, dan simpan recovery key di tempat terpisah yang aman.</p>
 
-<div class="service-provider">
-<strong>ExchangeRate-API / open.er-api.com</strong>
-<p>Digunakan untuk mengambil kurs mata uang publik pada fitur multi-mata uang. Aplikasi hanya meminta data kurs berdasarkan kode mata uang dasar, dan tidak mengirim data transaksi pribadi Anda ke layanan ini. Seperti layanan internet lain, penyedia dapat memproses informasi teknis standar seperti alamat IP dan metadata koneksi sesuai ketentuan mereka. <a href="https://www.exchangerate-api.com/terms#privacy" target="_blank">Lihat ketentuan &amp; privasi</a></p>
-</div>
+    <h2>10. Anak-anak</h2>
+    <p>Nectar Wallet tidak ditujukan bagi anak di bawah 13 tahun. Jika Anda mengetahui seorang anak memberikan data pribadi tanpa izin yang diperlukan, hubungi kami untuk menindaklanjuti penghapusan.</p>
 
-<h2>4. Keamanan</h2>
-<p>Data tetap berada di perangkat Anda. Kami menyarankan menggunakan pengunci layar untuk keamanan tambahan.</p>
+    <h2>11. Perubahan kebijakan</h2>
+    <p>Versi dan tanggal kebijakan dicantumkan di bagian atas. Perubahan material pada pemrosesan Cloud Sync akan meminta pengguna meninjau kebijakan terbaru sebelum sinkronisasi dilanjutkan.</p>
 
-<h2>5. Anak-anak</h2>
-<p>Aplikasi ini tidak ditujukan untuk anak di bawah 13 tahun.</p>
+    <h2>12. Layanan terkait</h2>
+    <div class="legal-links">
+        <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google</a>
+        <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer" target="_blank">Apple</a>
+        <a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer" target="_blank">RevenueCat</a>
+        <a href="https://www.exchangerate-api.com/terms#privacy" rel="noopener noreferrer" target="_blank">ExchangeRate-API</a>
+    </div>
 
-<h2>6. Perubahan</h2>
-<p>Kebijakan ini dapat diperbarui dari waktu ke waktu.</p>
+    <div class="legal-links">
+        <a href="cloud-terms.html">Ketentuan Sinkronisasi Cloud</a>
+        <a href="delete-account.html">Penghapusan Akun</a>
+        <a href="index.html">Kembali ke beranda</a>
+    </div>
+</section>
 
-<h2>7. Kontak</h2>
-<p>Jika ada pertanyaan, hubungi kami di: <strong>ansbee01@gmail.com</strong></p>
+<section data-lang="en">
+    <p class="eyebrow">Document version 2026-08-13</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: August 13, 2026 · Cloud sections become effective when Cloud Sync is publicly available</p>
 
-</div>
+    <div class="summary">
+        <p><strong>In short:</strong> Nectar Wallet remains offline-first and does not require an account for local features. If you choose Premium Plus Cloud Sync, text-based financial content is encrypted on the device before transmission. Minimum metadata is still processed to provide the service.</p>
+    </div>
 
-<!-- ===== ENGLISH ===== -->
-<div data-lang="en">
+    <h2>1. Who controls the data</h2>
+    <p>Nectar Wallet is developed by Ans Bee App Team in Manado, Indonesia. Privacy questions and requests may be sent to <a href="mailto:ansbee01@gmail.com">ansbee01@gmail.com</a>.</p>
 
-<h1>Privacy Policy</h1>
-<p class="update-date">Last updated: June 22, 2026</p>
+    <h2>2. Local features without an account</h2>
+    <p>You can use core features without a cloud account. Financial data, notes, receipt photos, and custom images are stored on the device. That data leaves the device only when you use a feature that requires it, such as sharing/export, a backup you choose to create, or Cloud Sync.</p>
 
-<p>This page explains how we manage and protect your data when you use <strong>Nectar Wallet</strong>.</p>
+    <h2>3. Account and Cloud Sync data</h2>
+    <p>If you choose to create a cloud account, we process:</p>
+    <ul>
+        <li><strong>Account identity:</strong> user ID, email address, display name, and avatar when provided by Google or Apple.</li>
+        <li><strong>Subscription:</strong> Premium Plus status, product ID, entitlement period, and verification timestamps from RevenueCat and app stores.</li>
+        <li><strong>Legal acceptance:</strong> document type, version and hash, server timestamp, platform, app build, language, and acceptance flow.</li>
+        <li><strong>Device and security:</strong> installation ID, platform, app build, last-active time, and device access state.</li>
+        <li><strong>Synchronization metadata:</strong> workspace/record IDs, data type, revision, change sequence, timestamps, deletion state, encryption version, and ciphertext size.</li>
+        <li><strong>Encrypted financial content:</strong> text-based accounts, categories, transactions, recurring transactions, budgets, savings, debts, and receivables as ciphertext.</li>
+    </ul>
+    <p>Receipt photos, custom images, recovery keys, and raw workspace keys are not uploaded within the current Cloud Sync scope.</p>
 
-<p>Nectar Wallet is a personal finance tracker designed to work locally on your device (offline-first), so your financial data stays on your device. Some optional features, such as ads, purchase validation, and exchange-rate updates, may contact third-party services.</p>
+    <h2>4. How encryption works</h2>
+    <p>Financial content is encrypted on the device using AES-256-GCM before being sent over HTTPS. The server stores ciphertext and a wrapped copy of the workspace key. Nectar Wallet does not store the recovery key needed to unwrap it.</p>
+    <p>End-to-end encryption does not hide the minimum metadata required for authentication, Premium Plus enforcement, conflict prevention, security, and service operations. Encryption also does not protect an unlocked or compromised device.</p>
 
-<h2>1. Data Collection</h2>
-<p>We do not require you to create an account (name, email, or phone number) to use this app.</p>
+    <h2>5. Technical data and third-party features</h2>
+    <ul>
+        <li><strong>Advertising and technical analytics:</strong> the free version may process Advertising ID, app interactions, and diagnostics through Google AdMob or platform services.</li>
+        <li><strong>Purchases:</strong> RevenueCat, Google Play Billing, and the App Store process purchase and related identity data under their policies.</li>
+        <li><strong>Exchange rates:</strong> ExchangeRate-API/open.er-api.com receives a request based on the base-currency code, not transaction titles, amounts, categories, accounts, notes, or photos.</li>
+        <li><strong>Sign-in:</strong> Google or Apple processes authentication based on the method you choose.</li>
+        <li><strong>Hosting:</strong> the production backend is planned as self-hosted Supabase on a Rumahweb VPS in Indonesia. Encrypted backup infrastructure may use a separate storage provider acting on our instructions.</li>
+    </ul>
 
-<h2>2. Types of Data</h2>
-<ul>
-<li><strong>Transaction Data:</strong> Stored entirely on your device and never sent to our servers.</li>
-<li><strong>Device Information:</strong> Used for advertising and technical analytics (e.g. Advertising ID).</li>
-<li><strong>Purchases:</strong> Processed by third-party services to validate Premium access.</li>
-<li><strong>Exchange Rate Requests:</strong> When you use the multi-currency feature, the app may retrieve public exchange rates from a third-party provider. These requests do not send your transaction title, transaction amount, category, account, notes, or transaction photos.</li>
-</ul>
+    <h2>6. Why data is processed</h2>
+    <p>Data is used to provide app features, authenticate users, verify subscriptions, synchronize devices, detect conflicts, prevent abuse, secure the service, provide support, fulfill deletion requests, and meet applicable legal obligations. Financial data is not sold.</p>
 
-<h2>3. Third-Party Services</h2>
+    <h2>7. Choices and controls</h2>
+    <ul>
+        <li>You may decline Cloud Sync and continue using the app locally.</li>
+        <li>You may sign out without deleting the cloud account.</li>
+        <li>You may delete the cloud account in the app or through the <a href="delete-account.html">Account Deletion</a> page.</li>
+        <li>You may request information about or correction of account data using our contact address.</li>
+        <li>Advertising settings and device permissions can be managed through the relevant operating system or platform.</li>
+    </ul>
 
-<div class="service-provider">
-<strong>Google AdMob</strong>
-<p>Used to display advertisements. <a href="https://policies.google.com/privacy" target="_blank">View policy</a></p>
-</div>
+    <h2>8. Retention and deletion</h2>
+    <ul>
+        <li>Local data remains until removed in the app, removed from the device, or deleted with the app according to operating-system behavior.</li>
+        <li>While the account and Premium Plus are active, cloud data is retained to provide synchronization.</li>
+        <li>After Premium Plus access expires, the encrypted cloud workspace may be retained for up to 90 days before deletion.</li>
+        <li>When an account is deleted, active data is removed from operational systems. Residual copies in encrypted backups may remain until the backup cycle ends, for up to 60 days.</li>
+        <li>Specific data may be retained longer where required by law, necessary for security, or necessary to resolve a dispute; the reason and scope will be limited.</li>
+    </ul>
 
-<div class="service-provider">
-<strong>RevenueCat &amp; Google Play Billing</strong>
-<p>Used to manage Premium purchases. <a href="https://www.revenuecat.com/privacy" target="_blank">View policy</a></p>
-</div>
+    <h2>9. Security</h2>
+    <p>We use device-side encryption, HTTPS, server access controls, Row Level Security, secret separation, minimized diagnostics, and encrypted backups. No system is entirely risk-free. Use a device lock, protect your Google/Apple account, and store the recovery key separately in a safe place.</p>
 
-<div class="service-provider">
-<strong>ExchangeRate-API / open.er-api.com</strong>
-<p>Used to retrieve public exchange rates for the multi-currency feature. The app only requests exchange-rate data by base currency code and does not send your personal transaction data to this service. Like other internet services, the provider may process standard technical information such as IP address and connection metadata according to its terms. <a href="https://www.exchangerate-api.com/terms#privacy" target="_blank">View terms &amp; privacy</a></p>
-</div>
+    <h2>10. Children</h2>
+    <p>Nectar Wallet is not directed to children under 13. If you learn that a child provided personal data without required authorization, contact us so we can address deletion.</p>
 
-<h2>4. Security</h2>
-<p>Your data remains on your device. We recommend enabling a screen lock for additional security.</p>
+    <h2>11. Policy changes</h2>
+    <p>The policy version and date appear at the top. Material changes to Cloud Sync processing will require users to review the latest policy before synchronization continues.</p>
 
-<h2>5. Children</h2>
-<p>This app is not intended for children under the age of 13.</p>
+    <h2>12. Related services</h2>
+    <div class="legal-links">
+        <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google</a>
+        <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer" target="_blank">Apple</a>
+        <a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer" target="_blank">RevenueCat</a>
+        <a href="https://www.exchangerate-api.com/terms#privacy" rel="noopener noreferrer" target="_blank">ExchangeRate-API</a>
+    </div>
 
-<h2>6. Changes</h2>
-<p>This policy may be updated from time to time.</p>
-
-<h2>7. Contact</h2>
-<p>If you have any questions, contact us at: <strong>ansbee01@gmail.com</strong></p>
-
-</div>
-
-</div>
-</div>
-
-<script>
-function setLang(lang) {
-    document.querySelectorAll('[data-lang]').forEach(function(el) {
-        el.classList.toggle('visible', el.dataset.lang === lang);
-    });
-    document.getElementById('btn-id').classList.toggle('active', lang === 'id');
-    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-    document.documentElement.lang = lang;
-}
-
-// Auto-detect browser language on first load
-(function() {
-    var nav = navigator.language || navigator.userLanguage || '';
-    if (!nav.toLowerCase().startsWith('id')) setLang('en');
-})();
-</script>
-
+    <div class="legal-links">
+        <a href="cloud-terms.html">Cloud Sync Terms</a>
+        <a href="delete-account.html">Account Deletion</a>
+        <a href="index.html">Back to home</a>
+    </div>
+</section>
+</article>
+</main>
+<script src="assets/legal.js"></script>
 </body>
 </html>
